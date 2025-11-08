@@ -153,6 +153,36 @@ git remote add origin https://github.com/你的用户名/你的仓库名.git
 git remote -v
 ```
 
+### 6. SSH vs HTTPS 连接方式
+
+**✅ 当前状态：SSH 已成功配置！**
+
+你的仓库已配置为使用 SSH 连接（`git@github.com:langzi-666/personal-blog.git`），并且 SSH 密钥已成功添加到 GitHub。现在可以直接使用 `git push` 推送代码，无需输入密码。
+
+**如果遇到 "Permission denied (publickey)" 错误：**
+
+这通常是因为远程仓库使用了 SSH 连接（`git@github.com:...`），但你的电脑没有配置 SSH 密钥。
+
+**推荐解决方案：使用 HTTPS 连接（更简单）**
+
+**使用命令行切换：**
+```bash
+# 查看当前远程仓库地址
+git remote -v
+
+# 如果显示 git@github.com:...，切换为 HTTPS
+git remote set-url origin https://github.com/你的用户名/你的仓库名.git
+
+# 验证是否切换成功
+git remote -v
+```
+
+**两种连接方式的区别：**
+- **HTTPS** (`https://github.com/...`)：需要用户名和 Personal Access Token，配置简单，推荐新手使用
+- **SSH** (`git@github.com:...`)：需要配置 SSH 密钥，更安全但配置较复杂，配置后无需每次输入密码
+
+**建议：** 如果没有特殊需求，使用 HTTPS 连接即可。如果已配置 SSH（如当前状态），SSH 连接更方便。
+
 ---
 
 ## ✅ 快速检查清单
